@@ -1,0 +1,204 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Chat */
+.chat-container {
+    width: 95%;
+    max-width: 800px;
+    height: 90vh;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.online-count {
+    background: rgba(255,255,255,0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* Area Pesan */
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+/* Style untuk scrollbar */
+.messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 3px;
+}
+
+/* Bubble Pesan */
+.message {
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    max-width: 70%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.my-message {
+    background: #667eea;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.other-message {
+    background: white;
+    color: #333;
+    border: 1px solid #e1e5e9;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.system-message {
+    background: #ffeaa7;
+    color: #2d3436;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-style: italic;
+    max-width: 80%;
+    font-size: 0.9em;
+}
+
+/* Info pengirim dan waktu */
+.message-sender {
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.my-message .message-sender {
+    text-align: right;
+    color: rgba(255,255,255,0.9);
+}
+
+.other-message .message-sender {
+    color: #667eea;
+}
+
+.message-time {
+    font-size: 0.7em;
+    margin-top: 5px;
+    opacity: 0.6;
+    text-align: right;
+}
+
+/* Input Area */
+.input-container {
+    display: flex;
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e1e5e9;
+    gap: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-container input:focus {
+    border-color: #667eea;
+}
+
+.input-container button {
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.input-container button:hover {
+    transform: translateY(-2px);
+}
+
+.input-container button:active {
+    transform: translateY(0);
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+    
+    .chat-header {
+        padding: 15px;
+    }
+    
+    .chat-header h1 {
+        font-size: 1.3em;
+    }
+}

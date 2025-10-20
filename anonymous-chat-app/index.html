@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Chat Interface -->
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <h1>💬 Anonymous Chat</h1>
+            <div class="online-count">
+                Online: <span id="online-count">0</span>
+            </div>
+        </div>
+        
+        <!-- Messages Area -->
+        <div id="messages" class="messages">
+            <!-- Pesan akan muncul di sini otomatis -->
+            <div class="system-message">
+                Selamat datang di anonymous chat! Mulai ngobrol yuk!
+            </div>
+        </div>
+        
+        <!-- Input Area -->
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Ketik pesan kamu..." maxlength="500">
+            <button onclick="sendMessage()">
+                <span>Kirim</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="white" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Our Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
